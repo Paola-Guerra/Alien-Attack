@@ -1,0 +1,62 @@
+<html>
+
+<head>
+  <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-environment-component@1.3.3/dist/aframe-environment-component.min.js"></script>
+  <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.1/dist/aframe-extras.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
+
+  <style>
+    .a-enter-vr-button {
+      display: none;
+    }
+
+    body {
+      background-image: url("");
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .text-center {
+      margin-top: 430px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <a-scene device-orientation-permission-ui="enabled: false" embedded>
+
+    <camera id="myCamera"></camera>
+    
+    <a-entity id="light" light="color: #FFF; intensity: 4" position="1 1 10"></a-entity>
+    <a-sky src="img/sky.jpeg" position="0 1.3 -2.8" rotation="0 0 0" scale="10 10 10"></a-sky>
+    <a-entity id="brainzo" light="type: directional; color: #FFF; point: 2" position="0 1.3 -2.8" scale="0.5 0.5 0.5"
+      gltf-model="img/brainzo.glb"
+      animation="property: rotation; to: 30 -360 0; dur: 9000; easing: linear; loop: true"></a-entity>
+     
+    <div id="wrapper" class="content d-flex flex-column h-100">
+      <main class="flex-shrink-0">
+        <div class="container py-5">
+          <div id="present">
+            <section class="container p-5" style="max-width:800px;">
+              <div class="text-center">
+                <br>
+                <br>
+                <a class="btn btn-primary btn-lg bg-dark border-dark" id="start" href="abduction.html">Alien Invation </a>
+              </div>
+              <br><br><br><br>
+            </section>
+          </div>
+        </div>
+      </main>
+    </div>
+  </a-scene>
+
+</body>
+
+</html>

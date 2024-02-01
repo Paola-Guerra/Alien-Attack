@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-environment-component@1.3.3/dist/aframe-environment-component.min.js"></script>
+  <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.1/dist/aframe-extras.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.2/js/bootstrap.min.js"></script>
+  <script src="planeta.js"></script>
+</head>
+
+<body>
+  <a-scene device-orientation-permission-ui="enabled: false">
+  
+    <a-entity environment="preset: forest; skyType: atmosphere; shadowSize: 100"></a-entity>
+    <camera id="myCamera"></camera>
+
+    <a-sky src="#sky" position="0 1.3 -2.8" rotation="0 0 0" scale="30 30 30" play-all-model-animations
+      gltf-model="img/billions_stars_skybox_hdri_panorama.glb"
+      animation="property: rotation; to: 0 -360 0; dur: 90000; easing: linear; loop: true">
+    </a-sky>
+
+    <a-entity class="sound" sound="src: url(x.mp3); autoplay: true">
+    </a-entity>
+
+    <a-plane class="grass" position="0.9 0.9 0.9" rotation="-90 0 0" width="60" height="60"
+      src="img/grass/GroundGrassGreen002_Sphere.png"></a-plane>
+
+    <a-entity class="ovni" position="-10 10 0" rotation="30 0 0" scale="10 10 10"
+      animation="property: rotation; to: 0 -90 -45; loop: true; dur: 20000;">
+      <a-entity scale="0.5 0.5 0.5" position="0 0 0" play-all-model-animations gltf-model="img/ufo.glb"></a-entity>
+
+      <a-entity id="light" light="type: point; intensity: 2; color: #00ff00" visible="false"
+        position="0 -0.2 0"></a-entity>
+    </a-entity>
+
+    <a-entity id="cow" scale="0.5 0.5 0.5" position="0.9,9 0.9,9 0.9,9" play-all-model-animations
+      gltf-model="img/Cow.glb" light="type: directional; color: #FFF; point: 2" position="0.5 1 1" animation-mixer=""
+      clickable></a-entity>
+
+    <a-entity id="cow" scale="0.5 0.5 0.5" position="12 0.9,9 10" play-all-model-animations gltf-model="img/Cow.glb"
+      light="type: directional; color: #FFF; point: 2" position="0.5 1 1" animation-mixer="" clickable></a-entity>
+
+      <a-entity id="cow" scale="0.5 0.5 0.5" position="-10 0.9,9 -5" play-all-model-animations gltf-model="img/Cow.glb"
+      light="type: directional; color: #FFF; point: 2" position="0.5 1 1" animation-mixer="" clickable></a-entity>
+
+      <a-entity id="cow" scale="0.5 0.5 0.5" position="20 0.9,9 7" play-all-model-animations gltf-model="img/Cow.glb"
+      light="type: directional; color: #FFF; point: 2" position="0.5 1 1" animation-mixer="" clickable></a-entity>
+
+      <a-entity id="cow" scale="0.5 0.5 0.5" position="-17 0.9,9 10" play-all-model-animations gltf-model="img/Cow.glb"
+      light="type: directional; color: #FFF; point: 2" position="0.5 1 1" animation-mixer="" clickable></a-entity>
+
+      <a-entity id="cow" scale="0.5 0.5 0.5" position="7 0.9,9 3" play-all-model-animations gltf-model="img/Cow.glb"
+      light="type: directional; color: #FFF; point: 2" position="0.5 1 1" animation-mixer="" clickable></a-entity>
+
+      <a-entity id="cow" scale="0.5 0.5 0.5" position="-8 0.9,9 8" play-all-model-animations gltf-model="img/Cow.glb"
+      light="type: directional; color: #FFF; point: 2" position="0.5 1 1" animation-mixer="" clickable></a-entity>
+
+      <a-entity id="cow" scale="0.5 0.5 0.5" position="11 0.9,9 -3" play-all-model-animations gltf-model="img/Cow.glb"
+      light="type: directional; color: #FFF; point: 2" position="0.5 1 1" animation-mixer="" clickable></a-entity>
+
+      <a-entity id="cow" scale="0.5 0.5 0.5" position="-11 0.9,9 6" play-all-model-animations gltf-model="img/Cow.glb"
+      light="type: directional; color: #FFF; point: 2" position="0.5 1 1" animation-mixer="" clickable></a-entity>
+
+      <a-entity id="cow" scale="0.5 0.5 0.5" position="12 0.9,9 -2" play-all-model-animations gltf-model="img/Cow.glb"
+      light="type: directional; color: #FFF; point: 2" position="0.5 1 1" animation-mixer="" clickable></a-entity>
+
+    <button onclick="moveOvni()"
+      style="position: absolute; bottom: 10px; left: 10px; z-index: 999; background-color: black; color: white; padding: 15px 20px; font-size: 16px; border: none; cursor: pointer;">
+      Abduction
+    </button>
+
+    <button><a href="attack.html"
+        style="position: relative; display: flex; text-decoration: none; top: 610px; left: 17px; z-index: 999; background-color: black; color: rgb(255, 255, 255); padding: 15px 20px; font-size: 16px; border: none; cursor: pointer;">
+        Attack</a>
+    </button>
+
+  </a-scene>
+</body>
+
+</html>
